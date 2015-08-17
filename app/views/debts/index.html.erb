@@ -19,7 +19,7 @@
       <% @model = debt %> 
       <tr>
         <td><%= link_to debt.id,  debt, :class => "btn btn-xs btn-info", id: "underline-link"%></td>
-        <td><%= link_to debt.client.select_display, debt.client, title: debt.client.select_display, id: "underline-link" %></td>
+        <td><%= link_to debt.client.select_display, debt.client, title: debt.client.select_display, id: "underline-link" if debt.client %></td>
         <td><%= debt.fecha %></td>
         <td><%= debt.clase_doc %></td>
         <td><%= debt.referencia %></td>

@@ -20,7 +20,7 @@
       <% @model = order %> 
       <tr>
         <td><%= link_to order.id,  order, :class => "btn btn-xs btn-info"%></td>
-        <td><%= link_to order.client.select_display, order.client, title: order.client.select_display, id: "underline-link" %></td>
+        <td><%= link_to order.client.select_display, order.client, title: order.client.select_display, id: "underline-link" if order.client%></td>
         <td><%= order.clase_ped %></td>
         <td><%=  I18n.l order.fecha, :format => :long if order.fecha%></td>
         <td><%= order.forma_entrega %></td>

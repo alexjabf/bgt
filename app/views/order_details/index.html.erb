@@ -21,8 +21,8 @@
       <% @model = order_detail %> 
       <tr>
         <td><%= link_to order_detail.id, order_detail, :class => "btn btn-xs btn-info", id: "underline-link" %></td>
-        <td><%= link_to order_detail.order.id,  order_detail.order, :class => "btn btn-xs btn-info", id: "underline-link"%></td>
-        <td><%= link_to order_detail.order.client.select_display, order_detail.order.client, title: order_detail.order.client.select_display, id: "underline-link" %></td>
+        <td><%= link_to order_detail.order.id,  order_detail.order, :class => "btn btn-xs btn-info", id: "underline-link" if order_detail.order %></td>
+        <td><%= link_to order_detail.order.client.select_display, order_detail.order.client, title: order_detail.order.client.select_display, id: "underline-link" if order_detail.order %></td>
         <td><%= order_detail.matnr %></td>
         <td><%= order_detail.cantidad %></td>
         <td><%= order_detail.unidad %></td>

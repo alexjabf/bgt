@@ -101,13 +101,13 @@
     <tbody>
       <% @order_detail.order_detail_materials.each do |order_detail_material| %> 
         <tr>
-          <td><%= link_to order_detail_material.material.id, order_detail_material.material, :class => "btn btn-xs btn-info", id: "underline-link" %></td>
-          <td><%= order_detail_material.material.descrip %></td>
-          <td><%= order_detail_material.material.existencia %></td>
-          <td><%= order_detail_material.material.unidad %></td>
-          <td><%= order_detail_material.material.precio %></td>
-          <td><%= order_detail_material.material.moneda %></td>
-          <td><%= order_detail_material.material.config %></td>
+          <td><%= link_to order_detail_material.material.id, order_detail_material.material, :class => "btn btn-xs btn-info", id: "underline-link" if order_detail_material.material %></td>
+          <td><%= order_detail_material.material.descrip if order_detail_material.material %></td>
+          <td><%= order_detail_material.material.existencia if order_detail_material.material %></td>
+          <td><%= order_detail_material.material.unidad if order_detail_material.material %></td>
+          <td><%= order_detail_material.material.precio if order_detail_material.material %></td>
+          <td><%= order_detail_material.material.moneda if order_detail_material.material %></td>
+          <td><%= order_detail_material.material.config if order_detail_material.material %></td>
         </tr>
       <% end %>
     </tbody>
