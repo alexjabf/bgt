@@ -1,6 +1,6 @@
 class OrderDetail < ActiveRecord::Base
   belongs_to :order
-  has_many :order_detail_materials
+  has_many :order_detail_materials, :dependent => :destroy
   #validates :order_id, presence: true
   accepts_nested_attributes_for :order_detail_materials, :allow_destroy => true
   def select_display

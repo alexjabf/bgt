@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
   belongs_to :client
-  has_one :order_detail
-  has_many :order_detail_materials, through: :order_detail
+  has_one :order_detail, :dependent => :destroy
+  has_many :order_detail_materials, through: :order_detail, :dependent => :destroy
   validates :client_id, presence: true
   
   
