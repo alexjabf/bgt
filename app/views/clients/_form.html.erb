@@ -1,0 +1,48 @@
+<%= form_for(@client) do |f| %>
+  <% if @client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+        <% @client.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label "Nombres" %><br>
+      <%= f.text_field :name1 %>
+    </div>
+    <div class="field">
+      <%= f.label "Apellidos" %><br>
+      <%= f.text_field :name2 %>
+    </div>
+    <div class="field">
+      <%= f.label "Tipo de Pago" %><br>
+      <%= f.select :cond_pago, options_for_select([["Efectivo", "Efectivo"], ["Tarjeta de Credito", "Tarjeta de Credito"], ["Cheque", "Cheque"]]), prompt: true, title: "Tipo de Pago"%>
+    </div>
+    <div class="field">
+      <%= f.label "Moneda" %><br>
+      <%= f.select :moneda, options_for_select([["MX", "MX"], ["DLL", "DLL"], ["EURO", "EURO"]]), prompt: true, title: "Modena"%>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label "Centro" %><br>
+      <%= f.select :centro, options_for_select([["Centro Norte", "Centro Norte"], ["Centro Sur", "Centro Sur"], ["Centro Este", "Centro Este"], ["Centro Oeste", "Centro Oeste"]]), prompt: true, title: "Centro"%>
+    </div>
+    <div class="field">
+      <%= f.label "Numero de Cuenta 1" %><br>
+      <%= f.text_field :clientesnumcte %>
+    </div>
+    <div class="field">
+      <%= f.label "Numero de Cuenta 2" %><br>
+      <%= f.text_field :clientesnumcte2 %>
+    </div>
+    <div class="actions">
+      <%= f.submit data: {disable_with: "Espere..."}, :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

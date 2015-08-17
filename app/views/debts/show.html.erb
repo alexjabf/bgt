@@ -1,0 +1,62 @@
+<div class="col-md-6">
+  <p>
+    <strong>No. de Adeudo:</strong>
+    <%= @debt.id %>
+  </p>
+
+  <p>
+    <strong>Cliente:</strong>
+    <%= link_to @debt.client.select_display, @debt.client, title: @debt.client.select_display, id: "underline-link" %>
+  </p>
+
+  <p>
+    <strong>Fecha:</strong>
+    <%=  I18n.l @debt.fecha, :format => :long if @debt.fecha%>
+  </p>
+
+  <p>
+    <strong>Clase de documento:</strong>
+    <%= @debt.clase_doc %>
+  </p>
+
+  <p>
+    <strong>Referencia:</strong>
+    <%= @debt.referencia %>
+  </p>
+
+  <p>
+    <strong>Fecha de vencimiento:</strong>
+    <%=  I18n.l @debt.fecha_venc, :format => :long if @debt.fecha_venc%>
+  </p>
+
+  <p>
+    <strong>Dias de vencimiento:</strong>
+    <%= @debt.dias_venc %>
+  </p>
+</div>
+<div class="col-md-6">
+  <p>
+    <strong>Saldo:</strong>
+    <%= number_to_currency(@debt.saldo, locale: session[:locale]) %>
+  </p>
+
+  <p>
+    <strong>Moneda:</strong>
+    <%= @debt.moneda %>
+  </p>
+
+  <p>
+    <strong>Columa:</strong>
+    <%= @debt.column %>
+  </p>
+
+  <p>
+    <strong>Registrado:</strong>
+    <%=  I18n.l @debt.created_at, :format => :long if @debt.created_at%>
+  </p>
+
+  <p>
+    <strong>Actualizado:</strong>
+    <%= I18n.l @debt.updated_at, :format => :long if @debt.updated_at%>
+  </p>
+</div>

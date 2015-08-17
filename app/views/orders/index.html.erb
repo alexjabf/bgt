@@ -1,0 +1,36 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>No. de Pedido</th>
+      <th>Cliente</th>
+      <th>Clase de pedido</th>
+      <th>Fecha</th>
+      <th>Forma entrega</th>
+      <th>Moneda</th>
+      <th>Centro</th>
+      <th>Fecha entrega</th>
+      <th>Flete local</th>
+      <th>Acciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <% @model = order %> 
+      <tr>
+        <td><%= link_to order.id,  order, :class => "btn btn-xs btn-info"%></td>
+        <td><%= link_to order.client.select_display, order.client, title: order.client.select_display, id: "underline-link" %></td>
+        <td><%= order.clase_ped %></td>
+        <td><%=  I18n.l order.fecha, :format => :long if order.fecha%></td>
+        <td><%= order.forma_entrega %></td>
+        <td><%= order.moneda %></td>
+        <td><%= order.centro %></td>
+        <td><%=  I18n.l order.fec_entrega, :format => :long if order.fec_entrega%></td>
+        <td><%= number_to_currency(order.flete_local, locale: session[:locale]) %></td>
+        <td><%= render "partials/index_links" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

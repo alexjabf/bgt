@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="portlet portlet-basic">
+      <div class="portlet-body">
+        <div class="action-links">
+          <%if action_name == "new" or action_name == "create"%>
+            <%=link_to eval("#{controller_name}_path"), data: {disable_with: "Espere..."}, :title => "Regresar a " + t("activerecord.models.#{controller_name.pluralize}"), :class => "btn btn-xs btn-info" do%>
+              <%="Regresar a " + t("activerecord.models.#{controller_name.pluralize}")%>
+            <%end%>
+          <%elsif action_name == "index" %>
+            <%=link_to eval("new_#{controller_name.singularize}_path"), data: {disable_with: "Espere..."}, :title => "Registar " + t("activerecord.models.#{controller_name.singularize}"), :class => "btn btn-xs btn-success" do%>
+              <%="Registar " + t("activerecord.models.#{controller_name.singularize}")%>
+            <%end%> 
+          <%elsif action_name == "edit" or action_name == "update" or action_name == "show"%>
+            <%=link_to eval("#{controller_name}_path"), data: {disable_with: "Espere..."}, :title => "Regresar a " +  t("activerecord.models.#{controller_name.pluralize}"), :class => "btn btn-xs btn-info" do%>
+              <%="Regresar a " + t("activerecord.models.#{controller_name.pluralize}")%>
+            <%end%> 
+            <%=link_to eval("new_#{controller_name.singularize}_path"), data: {disable_with: "Espere..."}, :title => "Registrar " + t("activerecord.models.#{controller_name.singularize}"), :class => "btn btn-xs btn-success" do%>
+              <%="Registrar " + t("activerecord.models.#{controller_name.singularize}")%>
+            <%end%> 
+            <%=link_to eval("edit_#{controller_name.singularize}_path(@#{controller_name.singularize})"), data: {disable_with: "Espere..."}, :title => "Editar " + t("activerecord.models.#{controller_name.singularize}"), :class => "btn btn-xs btn-warning" do%>
+              <%="Editar " + t("activerecord.models.#{controller_name.singularize}")%>
+            <%end%> 
+            <%=link_to eval("@#{controller_name.singularize}"), method: :delete, data: {disable_with: "Espere...", confirm: "¿Está seguro de que desea eliminar este registro?" }, :title => "Eliminar " + t("activerecord.models.#{controller_name.singularize}"), :class => "btn btn-xs btn-danger" do%>
+              <%="Eliminar " + t("activerecord.models.#{controller_name.singularize}")%>
+            <%end%>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

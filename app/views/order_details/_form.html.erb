@@ -1,0 +1,77 @@
+<%= nested_form_for(@order_detail) do |f| %>
+  <% if @order_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order_detail.errors.count, "error") %> prohibited this order_detail from being saved:</h2>
+
+      <ul>
+        <% @order_detail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label :pedido %><br>
+      <%= f.collection_select(:order_id, Order.all, :id, :select_display, {:prompt => "Seleccione"}, {:title => "Cliente"}) %>  
+    </div>
+    <div class="field">
+      <%= f.label "MATNR" %><br>
+      <%= f.number_field :matnr %>
+    </div>
+    <div class="field">
+      <%= f.label :cantidad %><br>
+      <%= f.number_field :cantidad %>
+    </div>
+    <div class="field">
+      <%= f.label :unidad %><br>
+      <%= f.number_field :unidad %>
+    </div>
+    <div class="field">
+      <%= f.label :precio %><br>
+      <%= f.text_field :precio %>
+    </div>
+    <div class="field">
+      <%= f.label :moneda %><br>
+      <%= f.select :moneda, options_for_select([["MX", "MX"], ["DLL", "DLL"], ["EURO", "EURO"]]), prompt: true, title: "Modena"%>
+    </div>
+    <div class="field">
+      <%= f.label "Por_UM" %><br>
+      <%= f.number_field :por_um %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label "UM" %><br>
+      <%= f.number_field :um %>
+    </div>
+    <div class="field">
+      <%= f.label :descuento_1 %><br>
+      <%= f.number_field :desc1 %>
+    </div>
+    <div class="field">
+      <%= f.label :descuento_2 %><br>
+      <%= f.number_field :desc2 %>
+    </div>
+    <div class="field">
+      <%= f.label :descuento_3 %><br>
+      <%= f.number_field :desc3 %>
+    </div>
+    <div class="field">
+      <%= f.label :importe %><br>
+      <%= f.text_field :importe %>
+    </div>
+    <div class="field">
+      <%= f.label :kilos %><br>
+      <%= f.number_field :kilos %>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <h3>Materiales</h3>
+    <%= f.fields_for :order_detail_materials %>
+    <div class="actions">
+      <%= f.link_to_add "Agregar Material", :order_detail_materials, :class => 'btn btn-xs btn-success', :title => "Agregar Material"%> <br><br>
+      <%= f.submit data: {disable_with: "Espere..."}, :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

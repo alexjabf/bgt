@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>No. de Adeudo</th>
+      <th>Cliente</th>
+      <th>Fecha</th>
+      <th>Clase de documento</th>
+      <th>Referencia</th>
+      <th>Fecha de vencimiento</th>
+      <th>Dias de vencimiento</th>
+      <th>Saldo</th>
+      <th>Acciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @debts.each do |debt| %>
+      <% @model = debt %> 
+      <tr>
+        <td><%= link_to debt.id,  debt, :class => "btn btn-xs btn-info", id: "underline-link"%></td>
+        <td><%= link_to debt.client.select_display, debt.client, title: debt.client.select_display, id: "underline-link" %></td>
+        <td><%= debt.fecha %></td>
+        <td><%= debt.clase_doc %></td>
+        <td><%= debt.referencia %></td>
+        <td><%= debt.fecha_venc %></td>
+        <td><%= debt.dias_venc %></td>
+        <td><%= number_to_currency(debt.saldo, locale: session[:locale]) %></td>
+        <td><%= render "partials/index_links" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

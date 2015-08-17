@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>No. de Material</th>
+      <th>Descripcion</th>
+      <th>Existencia</th>
+      <th>Unidad</th>
+      <th>Precio</th>
+      <th>Moneda</th>
+      <th>Configuracion</th>
+      <th>Acciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @materials.each do |material| %>
+      <% @model = material %> 
+      <tr>
+        <td><%= link_to material.id, material, :class => "btn btn-xs btn-info", id: "underline-link" %></td>
+        <td><%= material.descrip %></td>
+        <td><%= material.existencia %></td>
+        <td><%= material.unidad %></td>
+        <td><%= material.precio %></td>
+        <td><%= material.moneda %></td>
+        <td><%= material.config %></td>
+        <td><%= render "partials/index_links" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

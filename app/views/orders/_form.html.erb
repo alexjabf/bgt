@@ -1,0 +1,129 @@
+<%= nested_form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% @order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <h3 style="text-align: center;">Información de Pedido</h3>
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label "Cliente" %><br>
+        <%= f.collection_select(:client_id, Client.all, :id, :select_display, {:prompt => "Seleccione"}, {:title => "Cliente"}) %>  
+      </div>
+      <div class="field">
+        <%= f.label :clase_de_pedido %><br>
+        <%= f.select :clase_ped, options_for_select([["Normal", "Normal"], ["Prioridad Baja", "Prioridad Baja"], ["Prioridad Alta", "Prioridad Alta"]]), prompt: true, title: "Clase de Pedido"%>
+      </div>
+      <div class="field">
+        <%= f.label :numero_de_pedido_de_cliente %><br>
+        <%= f.text_field :numped_cte %>
+      </div>
+      <div class="field">
+        <%= f.label :fecha %><br>
+        <%= f.date_select :fecha %>
+      </div>
+      <div class="field">
+        <%= f.label :forma_de_entrega %><br>
+        <%= f.select :forma_entrega, options_for_select([["Entrega Domicilio", "Entrega Domicilio"], ["Entrega en Sucursal", "Entrega en Sucursal"]]), prompt: true, title: "Clase de Pedido"%>
+      </div>
+      <div class="field">
+        <%= f.label :cond_pago %><br>
+        <%= f.text_field :cond_pago %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label :moneda %><br>
+        <%= f.select :moneda, options_for_select([["MX", "MX"], ["DLL", "DLL"], ["EURO", "EURO"]]), prompt: true, title: "Modena"%>
+      </div>
+      <div class="field">
+        <%= f.label "Centro" %><br>
+        <%= f.select :centro, options_for_select([["Centro Norte", "Centro Norte"], ["Centro Sur", "Centro Sur"], ["Centro Este", "Centro Este"], ["Centro Oeste", "Centro Oeste"]]), prompt: true, title: "Centro"%>
+      </div>
+      <div class="field">
+        <%= f.label :fecha_de_entrega %><br>
+        <%= f.date_select :fec_entrega %>
+      </div>
+      <div class="field">
+        <%= f.label :flete_local %><br>
+        <%= f.text_field :flete_local %>
+      </div>
+      <div class="field">
+        <%= f.label "Tarifa de flete" %><br>
+        <%= f.text_field :tarifa_flete_for %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h3 style="text-align: center;">Detalles de Pedido</h3>
+    <%= f.fields_for :order_detail do |f|%>
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label "MATNR" %><br>
+          <%= f.number_field :matnr %>
+        </div>
+        <div class="field">
+          <%= f.label :cantidad %><br>
+          <%= f.number_field :cantidad %>
+        </div>
+        <div class="field">
+          <%= f.label :unidad %><br>
+          <%= f.number_field :unidad %>
+        </div>
+        <div class="field">
+          <%= f.label :precio %><br>
+          <%= f.text_field :precio %>
+        </div>
+        <div class="field">
+          <%= f.label :moneda %><br>
+          <%= f.select :moneda, options_for_select([["MX", "MX"], ["DLL", "DLL"], ["EURO", "EURO"]]), prompt: true, title: "Modena"%>
+        </div>
+        <div class="field">
+          <%= f.label "Por_UM" %><br>
+          <%= f.number_field :por_um %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label "UM" %><br>
+          <%= f.number_field :um %>
+        </div>
+        <div class="field">
+          <%= f.label :descuento_1 %><br>
+          <%= f.number_field :desc1 %>
+        </div>
+        <div class="field">
+          <%= f.label :descuento_2 %><br>
+          <%= f.number_field :desc2 %>
+        </div>
+        <div class="field">
+          <%= f.label :descuento_3 %><br>
+          <%= f.number_field :desc3 %>
+        </div>
+        <div class="field">
+          <%= f.label :importe %><br>
+          <%= f.text_field :importe %>
+        </div>
+        <div class="field">
+          <%= f.label :kilos %><br>
+          <%= f.number_field :kilos %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-12">
+    <!--h3 style="text-align: center;">Materiales</h3!-->
+    <%#= f.fields_for :order_detail_materials %>
+    <div class="actions">
+      <%#= f.link_to_add "Agregar Material", :order_detail_materials, :class => 'btn btn-xs btn-success', :title => "Agregar Material"%> <br><br>
+      <%= f.submit data: {disable_with: "Espere..."}, :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

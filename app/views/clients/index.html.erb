@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>No. de Cliente</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Tipo de Pago</th>
+      <th>Moneda</th>
+      <th>Centro</th>
+      <th>Numero de Cuenta 1</th>
+      <th>Numero de Cuenta 2</th>
+      <th>Acciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clients.each do |client| %>
+      <% @model = client %> 
+      <tr>
+        <td><%= link_to client.id,  client, :class => "btn btn-xs btn-info"%></td>
+        <td><%= client.name1 %></td>
+        <td><%= client.name2 %></td>
+        <td><%= client.cond_pago %></td>
+        <td><%= client.moneda %></td>
+        <td><%= client.centro %></td>
+        <td><%= client.clientesnumcte %></td>
+        <td><%= client.clientesnumcte2 %></td>
+        <td><%= render "partials/index_links" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

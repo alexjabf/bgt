@@ -1,0 +1,9 @@
+<%= form_tag welcome_erd_path, :method => "get" do %>
+  <%= label_tag :disconnected %>
+  <%= check_box_tag :disconnected, false, false %><br>
+  <%= label_tag :title %>
+  <%= text_field_tag :title %><br>
+  <%= hidden_field_tag :regenerate, nil, :value => true, :readonly => true %>
+  <%= submit_tag%>
+<%end%>
+<iframe src=<%= "/assets/erd.pdf" %> width="800" height="800" style="border: none;"> </iframe>

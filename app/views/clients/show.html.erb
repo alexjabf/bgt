@@ -1,0 +1,54 @@
+<div class="col-md-6">
+  <p>
+    <strong>No. de Cliente:</strong>
+    <%= @client.id %>
+  </p>
+
+
+  <p>
+    <strong>Nombres:</strong>
+    <%= @client.name1 %>
+  </p>
+
+  <p>
+    <strong>Apellidos:</strong>
+    <%= @client.name2 %>
+  </p>
+
+  <p>
+    <strong>Tipo de Pago:</strong>
+    <%= @client.cond_pago %>
+  </p>
+
+  <p>
+    <strong>Moneda:</strong>
+    <%= @client.moneda %>
+  </p>
+
+  <p>
+    <strong>Centro:</strong>
+    <%= @client.centro %>
+  </p>
+</div>
+<div class="col-md-6">
+  <p>
+    <strong>Numero de Cuenta 1:</strong>
+    <%= @client.clientesnumcte %>
+  </p>
+
+  <p>
+    <strong>Numero de Cuenta 2:</strong>
+    <%= @client.clientesnumcte2 %>
+  </p>
+
+
+  <p>
+    <strong>Registrado:</strong>
+    <%=  I18n.l @client.created_at, :format => :long if @client.created_at%>
+  </p>
+
+  <p>
+    <strong>Actualizado:</strong>
+    <%= I18n.l @client.updated_at, :format => :long if @client.updated_at%>
+  </p>
+</div>

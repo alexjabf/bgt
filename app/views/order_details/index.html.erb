@@ -1,0 +1,37 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>No. de Detalle</th>
+      <th>No. de Pedido</th>
+      <th>Cliente</th>
+      <th>MATNR</th>
+      <th>Cantidad</th>
+      <th>Unidad</th>
+      <th>Precio</th>
+      <th>Moneda</th>
+      <th>Importe</th>
+      <th>Kilos</th>
+      <th>Acciones</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_details.each do |order_detail| %>
+      <% @model = order_detail %> 
+      <tr>
+        <td><%= link_to order_detail.id, order_detail, :class => "btn btn-xs btn-info", id: "underline-link" %></td>
+        <td><%= link_to order_detail.order.id,  order_detail.order, :class => "btn btn-xs btn-info", id: "underline-link"%></td>
+        <td><%= link_to order_detail.order.client.select_display, order_detail.order.client, title: order_detail.order.client.select_display, id: "underline-link" %></td>
+        <td><%= order_detail.matnr %></td>
+        <td><%= order_detail.cantidad %></td>
+        <td><%= order_detail.unidad %></td>
+        <td><%= order_detail.precio %></td>
+        <td><%= order_detail.moneda %></td>
+        <td><%= number_to_currency(order_detail.importe, locale: session[:locale]) %></td>
+        <td><%= order_detail.kilos %></td>
+        <td><%= render "partials/index_links" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

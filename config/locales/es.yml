@@ -1,0 +1,380 @@
+es: 
+  "true": "Si"
+  "false": "No"
+  send: "Enviar"
+  cancel: "Cancelar"
+  not_available: "N/D" 
+  all_records: "Todos los Registros"
+  select_page_numbers: "Seleccione No. de Registros"
+  avatar:
+    crop_image: "Recorta la imagen"
+    crop_submit: "Actualizar Imagen"
+    destroy: "Borrar avatar"
+    destroy_sure: "¿Borrar el avatar seleccionado?"
+    error:
+      no_file: "Tienes que seleccionar un fichero"
+      no_image_file: "El fichero no es válido, tiene que ser una imagen"
+      no_width: "La selección no puede estar vacía"
+    list: "Tienes estos avatars"
+    new: "Crear un nuevo avatar"
+    new_short: "Nuevo avatar"
+    no_avatars: "No tienes ningún avatar, ¡crea uno!"
+    one: "Avatar"
+    other: "Avatares"
+    original: "Imagen original"
+    preview: "Vista previa"
+    profile_change: "Cambia tu avatar"
+    set_default: "Seleccionar"
+    set_default_sure: "¿Seleccionar este avatar?"
+    text:
+      new: "... o sube uno nuevo"
+      use: "Usa uno de tus avatares..."
+    upload: "Subir"  
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - Domingo
+    - Lunes
+    - Martes
+    - Miércoles
+    - Jueves
+    - Viernes
+    - Sábado
+    formats:
+      default: ! "%d/%m/%Y"
+      long: ! "%A, %d de %B de %Y"
+      long_no_time: ! "%A, %d de %B de %Y"      
+      short: ! "%d de %b"      
+    month_names:
+    -
+    - Enero
+    - Febrero
+    - Marzo
+    - Abril
+    - Mayo
+    - Junio
+    - Julio
+    - Agosto
+    - Septiembre
+    - Octubre
+    - Noviembre
+    - Diciembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: cerca de 1 hora
+        other: cerca de %{count} horas
+      about_x_months:
+        one: cerca de 1 mes
+        other: cerca de %{count} meses
+      about_x_years:
+        one: cerca de 1 año
+        other: cerca de %{count} años
+      almost_x_years:
+        one: casi 1 año
+        other: casi %{count} años
+      half_a_minute: medio minuto
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: más de 1 año
+        other: más de %{count} años
+      x_days:
+        one: 1 día
+        other: ! "%{count} días"
+      x_minutes:
+        one: 1 minuto
+        other: ! "%{count} minutos"
+      x_months:
+        one: 1 mes
+        other: ! "%{count} meses"
+      x_seconds:
+        one: 1 segundo
+        other: ! "%{count} segundos"
+    prompts:
+      day: Día
+      hour: Hora
+      minute: Minuto
+      month: Mes
+      second: Segundos
+      year: Año   
+  errors: &errors
+    format: ! "%{attribute} %{message}"
+    messages:
+      accepted: debe ser aceptado.
+      blank: no puede estar en blanco.
+      confirmation: no coincide con la confirmación.
+      empty: no puede estar vacío.
+      equal_to: debe ser igual a %{count}.
+      even: debe ser un número par.
+      exclusion: está reservado.
+      greater_than: debe ser mayor que %{count}.
+      greater_than_or_equal_to: debe ser mayor o igual que %{count}.
+      inclusion: no está incluído en la lista.
+      invalid: es inválido.
+      less_than: debe ser menor que %{count}.
+      less_than_or_equal_to: debe ser menor o igual que %{count}.
+      not_a_number: no es un número.
+      not_an_integer: debe ser un entero.
+      odd: debe ser un número non.
+      record_invalid: ! "La validación falló: %{errors}."
+      taken: ya ha sido tomado.
+      too_long:
+        one: es demasiado largo (máximo 1 caracter).
+        other: es demasiado largo (máximo %{count} caracteres).
+      too_short:
+        one: es demasiado corto (mínimo 1 caracter).
+        other: es demasiado corto (mínimo %{count} caracteres).
+      wrong_length:
+        one: longitud errónea (debe ser de 1 caracter).
+        other: longitud errónea (debe ser de %{count} caracteres).
+    template:
+      body: ! "Revise que los siguientes campos sean válidos:"
+      header:
+        one: ! "%{model} no pudo guardarse debido a 1 error."
+        other: ! "%{model} no pudo guardarse debido a %{count} errores."
+  helpers:
+    select:
+      prompt: Por favor selecciona
+    submit:
+      create: Crear %{model}
+      submit: Guardar %{model}
+      update: Actualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: ! ","
+        format: ! "%u%n"
+        precision: 2
+        separator: .
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ! ","
+      precision: 2
+      separator: .
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! "%n %u"
+        units:
+          billion: mil millones
+          million: millónes
+          quadrillion: mil billones
+          thousand: mil
+          trillion: billónes
+          unit: ""
+      format:
+        delimiter: ! ","
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ! ","
+    precision:
+      format:
+        delimiter: ! ","
+  support:
+    array:
+      last_word_connector: ! " y "
+      two_words_connector: ! " y "
+      words_connector: ! ", "
+  time:
+    am: am
+    formats:
+      default: ! "%a, %d de %b de %Y a las %H:%M:%S %Z"
+      long: ! "%A, %d de %B de %Y a las %I:%M %p"
+      short: ! "%d de %b a las %H:%M hrs"
+      hour: ! "%H:%M hrs"
+      custom: ! "%I:%M %p"
+    pm: pm
+      
+  layouts:
+    application:
+      send_email: "Enviar correo electrónico a %{name}."
+      filter: Filtrar %{model} 
+      wrong_format: "Formato incorrecto, sólo se permiten "
+      required: "Obligatorio"
+      not_required: "Opcional"
+      all_records: Todos
+      show_all_items: Mostrar Todos
+      not_match_found_for: "No se encontro algun registro con: "      
+      are_you_sure_multiple_destroy:
+        male: ¿Esta seguro que desea eliminar los %{model} seleccionados?
+        female: ¿Esta seguro que desea eliminar las %{model} seleccionadas?
+      text_field: Campo de Texto
+      text_area: Area de Texto
+      password_field: Campo de Password
+      email_field: Campo de Correo Electronico
+      url_field: Campo de URL
+      search_field: Campo de Búsqueda
+      color_field: Color Field
+      hidden_field: Campo Oculto
+      select: Seleccionador
+      number_field: Campo de Número
+      phone_field: Campo de Teléfono
+      telephone_field: Campo de Teléfono (2)
+      check_box: Casilla de Verificación
+      radio_button: Botón de Radio
+      file_field: Seleccionador de Archivo
+      field_set: Field Set
+      image_submit: Imagen
+      datetime_local_select: Seleccionador de Fecha y Hora Local
+      date_select: Seleccionador de Fecha
+      datetime_select: Seleccionador de Fecha y Hora
+      month_select: Seleccionador de Mes
+      week_select: Seleccionador de Semana
+      time_select: Seleccionador de Tiempo
+      range_field: Campo de Rango
+      utf8_enforcer: Utf8 Enforcer
+      normal_display: Normal
+      color_display: Color
+      encrypted_display: Encriptada
+      image_display: Imagén
+      text_display: Texto
+      search_display: Búsqueda
+      text_area_display: Area de Texto
+      number_display: Número
+      percentage_display: Porcentaje
+      big_number_display: Número Grande
+      currency_display: Moneda
+      address_display: Dirección
+      phone_display: Teléfono
+      email_display: Correo Electrónico
+      link_display: Enlace
+      url_display: Página Web
+      date_display: Fecha
+      datetime_display: Fecha y Hora
+      time_display: Tiempo
+      boolean_display: Booleano
+      menu: Menu
+      model: Modelo
+      referenced_column: Columna Referenciada
+      tools: Herramientas
+      actions: Acciones
+      form_reset: Resetear Forma
+      number_of_records: Número de Registros
+      global_validation: Global
+      number: Número
+      address: Dirección
+      phone: Teléfono
+      link: Enlace
+      url: Página Web
+      date: Fecha
+      datetime: Fecha y Hora
+      timestamp: Estampa de Tempo
+      text: Texto
+      name: Nombre
+      username: Nombre de Usuario
+      login: Login
+      zip: Código Postal
+      price: Precio
+      email: Correo Electrónico
+      password: Contraseña
+      time: Hora
+      boolean: Boleano
+      male: Masculino
+      female: Femenino
+      decimal: Decimal/Moneda
+      ip_address: Ip Address
+      search: Búsqueda
+      has_one: Has One
+      has_many: Has Many
+      has_and_belongs_to_many: Has And Belongs To Many
+      development_tools: Development Tools
+      return_to_my_application: Return To My Application
+      erd: Erd
+    devise:
+      enter_email: Introduzca su correo electrónico.
+      enter_login: Introduzca su correo electrónico o nombre de usuario.
+      enter_password: Introduzca su contraseña.
+      enter_new_password: Introduzca su nueva contraseña.
+      required_if_new_password: Obligatorio si hay cambio de contraseña
+      enter_new_password_confirmation: Introduzca la confirmación de su nueva contraseña.
+      current_password: Introduzca su contraseña actual para confirmar sus cambios.
+      leave_password_blank: Deje la contraseña en blanco si no desea cambiarla
+      leave_same_username: Dejar el mismo nombre de usuario
+      enter_new_username: Ingresar nuevo nombre de usuario
+     
+  messages:
+    error:
+      you_must_select_at_least_one: 
+        male: Debe seleccionar almenos un %{model}.        
+        female: Debe seleccionar almenos un %{model}.
+    validators:
+      username: ": Formato de nombre de usuario incorrecto."
+      global_validation: ": Formato incorrecto."
+      address: ": Formato de dirección incorrecto."
+      names: ": Formato incorrecto."
+      number: ": Formato número incorrecto."
+      decimal: ": Formato de número decimal incorrecto."      
+      email: ": Formato de correo elecronico incorrecto."
+      login: ": Formato de nombre de usuario o correo elecronico incorrecto."      
+      url: ": Formato de url incorrecto."
+      password: ": Formato de contraseña incorrecto."
+      other: ": Formato incorrecto."
+      scaffold: Scaffold
+      phone: ": Formato de teléfono incorrecto."
+      min_length: ": caracteres mínimos."
+      max_length: ": caracteres maximos."
+      date: ": Formato de fecha incorrecto."
+      text: ": Formato de texto incorrecto."
+      boolean: ": Formato de texto incorrecto."
+      currency: ": Formato de texto incorrecto."
+      price: ": Formato de texto incorrecto."
+  activerecord:
+    models:
+      welcome: "Elaborar un pequeño sitio web en PHP/MySQL, siguiendo el modelo MVC. Que contenga las siguientes opciones:"  
+      welcomes: "Elaborar un pequeño sitio web en PHP/MySQL, siguiendo el modelo MVC. Que contenga las siguientes opciones:"       
+      client: 'Cliente'
+      clients: 'Clientes'
+      debt: 'Adeudo'
+      debts: 'Adeudos'
+      order: 'Pedido'
+      orders: 'Pedidos'     
+      order_detail: 'Detalle de Pedido'
+      order_details: 'Detalle de Pedidos'   
+      material: 'Material'
+      materials: 'Materiales'       

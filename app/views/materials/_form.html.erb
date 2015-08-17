@@ -1,0 +1,76 @@
+<%= form_for(@material) do |f| %>
+  <% if @material.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@material.errors.count, "error") %> prohibited this material from being saved:</h2>
+
+      <ul>
+        <% @material.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label "Centro" %><br>
+      <%= f.select :centro, options_for_select([["Centro Norte", "Centro Norte"], ["Centro Sur", "Centro Sur"], ["Centro Este", "Centro Este"], ["Centro Oeste", "Centro Oeste"]]), prompt: true, title: "Centro"%>
+    </div>
+    <div class="field">
+      <%= f.label :existencia %><br>
+      <%= f.number_field :existencia %>
+    </div>
+    <div class="field">
+      <%= f.label :descripción %><br>
+      <%= f.text_field :descrip %>
+    </div>
+    <div class="field">
+      <%= f.label :unidad %><br>
+      <%= f.number_field :unidad %>
+    </div>
+    <div class="field">
+      <%= f.label :existencia_ua %><br>
+      <%= f.number_field :exist_ua %>
+    </div>
+    <div class="field">
+      <%= f.label :unidad_alm %><br>
+      <%= f.number_field :unidad_alm %>
+    </div>
+    <div class="field">
+      <%= f.label :peso_teo %><br>
+      <%= f.number_field :peso_teo %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label :precio %><br>
+      <%= f.text_field :precio %>
+    </div>
+    <div class="field">
+      <%= f.label "Moneda" %><br>
+      <%= f.select :moneda, options_for_select([["MX", "MX"], ["DLL", "DLL"], ["EURO", "EURO"]]), prompt: true, title: "Modena"%>
+    </div>
+    <div class="field">
+      <%= f.label :por_unidad %><br>
+      <%= f.number_field :por_uni %>
+    </div>
+    <div class="field">
+      <%= f.label :configuración %><br>
+      <%= f.text_field :config %>
+    </div>
+    <div class="field">
+      <%= f.label :ped_detnumped %><br>
+      <%= f.text_field :ped_detnumped %>
+    </div>
+    <div class="field">
+      <%= f.label :ped_detpos %><br>
+      <%= f.number_field :ped_detpos %>
+    </div>
+    <div class="field">
+      <%= f.label :ped_detpos2 %><br>
+      <%= f.number_field :ped_detpos2 %>
+    </div>
+    <div class="actions">
+      <%= f.submit data: {disable_with: "Espere..."}, :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,110 @@
+digraph Bgt {
+rankdir = "LR";
+ranksep = "0.5";
+nodesep = "0.4";
+pad = "0.4,0.4";
+margin = "0,0";
+concentrate = "true";
+labelloc = "t";
+fontsize = "13";
+fontname = "Arial BoldMT";
+node[ shape  =  "Mrecord" , fontsize  =  "10" , fontname  =  "ArialMT" , margin  =  "0.07,0.05" , penwidth  =  "1.0"];
+edge[ fontname  =  "ArialMT" , fontsize  =  "7" , dir  =  "both" , arrowsize  =  "0.9" , penwidth  =  "1.0" , labelangle  =  "32" , labeldistance  =  "1.8"];
+label = "Bgt domain model\n\n";
+m_Client [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Client</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="centro">centro <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="clientesnumcte">clientesnumcte <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="clientesnumcte2">clientesnumcte2 <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="cond_pago">cond_pago <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="moneda">moneda <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="name1">name1 <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="name2">name2 <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+</table>
+>];
+m_Debt [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Debt</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="clase_doc">clase_doc <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="column">column <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="dias_venc">dias_venc <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="fecha">fecha <font face="Arail ItalicMT" color="grey60">date</font></td></tr>
+  <tr><td align="left" width="130" port="fecha_venc">fecha_venc <font face="Arail ItalicMT" color="grey60">date</font></td></tr>
+  <tr><td align="left" width="130" port="moneda">moneda <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="referencia">referencia <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="saldo">saldo <font face="Arail ItalicMT" color="grey60">float</font></td></tr>
+</table>
+>];
+m_Material [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Material</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="centro">centro <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="config">config <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="descrip">descrip <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="exist_ua">exist_ua <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="existencia">existencia <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="moneda">moneda <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="order_detail_id">order_detail_id <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="ped_detnumped">ped_detnumped <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="ped_detpos">ped_detpos <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="ped_detpos2">ped_detpos2 <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="peso_teo">peso_teo <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="por_uni">por_uni <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="precio">precio <font face="Arail ItalicMT" color="grey60">float</font></td></tr>
+  <tr><td align="left" width="130" port="unidad">unidad <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="unidad_alm">unidad_alm <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+</table>
+>];
+m_Order [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">Order</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="centro">centro <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="clase_ped">clase_ped <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="cond_pago">cond_pago <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="fec_entrega">fec_entrega <font face="Arail ItalicMT" color="grey60">date</font></td></tr>
+  <tr><td align="left" width="130" port="fecha">fecha <font face="Arail ItalicMT" color="grey60">date</font></td></tr>
+  <tr><td align="left" width="130" port="flete_local">flete_local <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="forma_entrega">forma_entrega <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="moneda">moneda <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="numped_cte">numped_cte <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="tarifa_flete_for">tarifa_flete_for <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+</table>
+>];
+m_OrderDetail [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">OrderDetail</font></td></tr>
+</table>
+|
+<table border="0" align="left" cellspacing="2" cellpadding="0" width="134">
+  <tr><td align="left" width="130" port="cantidad">cantidad <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="desc1">desc1 <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="desc2">desc2 <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="desc3">desc3 <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="importe">importe <font face="Arail ItalicMT" color="grey60">float</font></td></tr>
+  <tr><td align="left" width="130" port="kilos">kilos <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="matnr">matnr <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="moneda">moneda <font face="Arail ItalicMT" color="grey60">string</font></td></tr>
+  <tr><td align="left" width="130" port="por_um">por_um <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="precio">precio <font face="Arail ItalicMT" color="grey60">float</font></td></tr>
+  <tr><td align="left" width="130" port="um">um <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+  <tr><td align="left" width="130" port="unidad">unidad <font face="Arail ItalicMT" color="grey60">integer</font></td></tr>
+</table>
+>];
+m_OrderDetailMaterial [label = <<table border="0" align="center" cellspacing="0.5" cellpadding="0" width="134">
+  <tr><td align="center" valign="bottom" width="130"><font face="Arial BoldMT" point-size="11">OrderDetailMaterial</font></td></tr>
+</table>
+>];
+  m_Client -> m_Debt [arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "2"];
+  m_Client -> m_Order [arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "2"];
+  m_Material -> m_OrderDetailMaterial [arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "2"];
+  m_Order -> m_OrderDetail [arrowsize = "0.6", arrowhead = "odot", arrowtail = "odot", weight = "2"];
+  m_OrderDetail -> m_OrderDetailMaterial [arrowsize = "0.6", arrowhead = "odotnormal", arrowtail = "odot", weight = "2"];
+}

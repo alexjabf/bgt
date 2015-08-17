@@ -1,0 +1,20 @@
+<div class="btn-group">
+  <button class="btn btn-github btn-mini dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i>  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><%=link_to @model, :title => "Mostrar" do%>
+        <i class="fa fa-eye-slash"></i> Mostrar
+      <%end%>
+    </li>
+    <li class="divider"></li>
+    <li><%=link_to eval("edit_#{controller_name.singularize}_path(@model)"), :title => "Editar" do %>
+        <i class="fa fa-pencil"></i> Editar
+      <%end%>
+    </li>
+
+    <li class="divider"></li>
+    <li><%=link_to @model, method: :delete, data: { confirm: "¿Está seguro de que desea eliminar este registro?" }, :title => "Eliminar" do%>
+        <i class="fa fa-trash-o"></i> Eliminar
+      <%end%>
+    </li>
+  </ul>
+</div>

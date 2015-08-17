@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name1: MyString
+  name2: MyString
+  cond_pago: MyString
+  moneda: MyString
+  centro: MyString
+  clientesnumcte: MyString
+  clientesnumcte2: MyString
+
+two:
+  name1: MyString
+  name2: MyString
+  cond_pago: MyString
+  moneda: MyString
+  centro: MyString
+  clientesnumcte: MyString
+  clientesnumcte2: MyString

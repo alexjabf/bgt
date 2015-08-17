@@ -1,0 +1,56 @@
+<%= form_for(@debt) do |f| %>
+  <% if @debt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@debt.errors.count, "error") %> prohibited this debt from being saved:</h2>
+
+      <ul>
+        <% @debt.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label "Cliente" %><br>
+      <%= f.collection_select(:client_id, Client.all, :id, :select_display, {:prompt => "Seleccione"}, {:title => "Cliente"}) %>  
+    </div>
+    <div class="field">
+      <%= f.label "Fecha" %><br>
+      <%= f.date_select :fecha %>
+    </div>
+    <div class="field">
+      <%= f.label "Clase de Documento" %><br>
+      <%= f.select :clase_doc, options_for_select([["Documento Activo", "Documento Activo"], ["Documento contable", "Documento contable"], ["Amortización", "Amortización"], ["Neto", "Neto"], ["Carta Mayor", "Carta Mayor"]]), prompt: true, title: "Modena"%>
+    </div>
+    <div class="field">
+      <%= f.label "Referencia" %><br>
+      <%= f.text_field :referencia %>
+    </div>
+    <div class="field">
+      <%= f.label "Fecha de Vencimiento" %><br>
+      <%= f.date_select :fecha_venc %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="field">
+      <%= f.label "Dias de Vencimiento" %><br>
+      <%= f.number_field :dias_venc %>
+    </div>
+    <div class="field">
+      <%= f.label "Saldo" %><br>
+      <%= f.text_field :saldo %>
+    </div>
+    <div class="field">
+      <%= f.label "Moneda" %><br>
+      <%= f.select :moneda, options_for_select([["MX", "MX"], ["DLL", "DLL"], ["EURO", "EURO"]]), prompt: true, title: "Modena"%>
+    </div>
+    <div class="field">
+      <%= f.label "Columna" %><br>
+      <%= f.select :column, options_for_select([["1", "1"], ["2", "2"], ["3", "3"],["4", "4"], ["5", "5"], ["6", "6"],["7", "7"], ["8", "8"], ["9", "9"],["10", "10"]]), prompt: true, title: "Modena"%>
+    </div>
+    <div class="actions">
+      <%= f.submit data: {disable_with: "Espere..."}, :class => "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

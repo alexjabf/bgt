@@ -1,0 +1,88 @@
+<div class="col-md-6">
+
+  <p>
+    <strong>No. de Material</strong>
+    <%= @material.id %>
+  </p
+
+  <p>
+    <strong>Centro:</strong>
+    <%= @material.centro %>
+  </p>
+
+  <p>
+    <strong>Existencia:</strong>
+    <%= @material.existencia %>
+  </p>
+
+  <p>
+    <strong>Descripcion:</strong>
+    <%= @material.descrip %>
+  </p>
+
+  <p>
+    <strong>Unidad:</strong>
+    <%= @material.unidad %>
+  </p>
+
+  <p>
+    <strong>Existencia ua:</strong>
+    <%= @material.exist_ua %>
+  </p>
+
+  <p>
+    <strong>Unidad alm:</strong>
+    <%= @material.unidad_alm %>
+  </p>
+
+  <p>
+    <strong>Peso teo:</strong>
+    <%= @material.peso_teo %>
+  </p>
+  
+  <p>
+    <strong>Precio:</strong>
+    <%= number_to_currency(@material.precio, locale: session[:locale]) %>
+  </p>
+</div>
+<div class="col-md-6">
+  <p>
+    <strong>Moneda:</strong>
+    <%= @material.moneda %>
+  </p>
+
+  <p>
+    <strong>Por unidad:</strong>
+    <%= @material.por_uni %>
+  </p>
+
+  <p>
+    <strong>Configuracion:</strong>
+    <%= @material.config %>
+  </p>
+
+  <p>
+    <strong>Ped detnumped:</strong>
+    <%= @material.ped_detnumped %>
+  </p>
+
+  <p>
+    <strong>Ped detpos:</strong>
+    <%= @material.ped_detpos %>
+  </p>
+
+  <p>
+    <strong>Ped detpos2:</strong>
+    <%= @material.ped_detpos2 %>
+  </p>
+
+  <p>
+    <strong>Registrado:</strong>
+    <%=  I18n.l @material.created_at, :format => :long if @material.created_at%>
+  </p>
+
+  <p>
+    <strong>Actualizado:</strong>
+    <%= I18n.l @material.updated_at, :format => :long if @material.updated_at%>
+  </p>
+</div>

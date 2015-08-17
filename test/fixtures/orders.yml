@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client_id: 
+  clase_ped: MyString
+  numped_cte: MyString
+  fecha: 2015-08-16
+  forma_entrega: MyString
+  cond_pago: MyString
+  moneda: MyString
+  centro: MyString
+  fec_entrega: 2015-08-16
+  flete_local: MyString
+  tarifa_flete_for: MyString
+
+two:
+  client_id: 
+  clase_ped: MyString
+  numped_cte: MyString
+  fecha: 2015-08-16
+  forma_entrega: MyString
+  cond_pago: MyString
+  moneda: MyString
+  centro: MyString
+  fec_entrega: 2015-08-16
+  flete_local: MyString
+  tarifa_flete_for: MyString

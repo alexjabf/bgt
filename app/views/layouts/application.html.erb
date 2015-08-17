@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>BGT - Ejercicio</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+            <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <header class="navbar navbar-default navbar-static-top" role="banner">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "BGT", clients_path, :class=>"navbar-brand" %>
+        </div>
+        <nav class="collapse navbar-collapse" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>
+              <%= link_to "Inicio", root_path, title: "Inicio" %>
+            </li>
+            <li>
+              <%= link_to "Clientes", clients_path, title: "Clientes"  %>
+            </li>
+            <li>
+              <%= link_to "Adeudos", debts_path, title: "Adeudos"  %>
+            </li>
+            <li>
+              <%= link_to "Pedidos", orders_path, title: "Pedidos"  %>
+            </li>
+            <li>
+              <%= link_to "Detalle de Pedidos", order_details_path, title: "Detalle de Pedidos"  %>
+            </li>
+            <li>
+              <%= link_to "Materiales", materials_path, title: "Materiales"  %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Begin Body -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="leftCol">
+
+          <div class="well"> 
+            <ul class="nav nav-stacked" id="sidebar">
+              <li><%=link_to root_path, data: {disable_with: "Espere..."}, :title => "Inicio" do%>
+                  <%=  "Inicio" %> 
+                <%end%></li> 
+              <li><%=link_to :back, data: {disable_with: "Espere..."}, :title => "Regresar a pagína anterior" do%>
+                  <%=  "Regresar a pagína anterior" %> 
+                <%end%></li> 
+              <%if action_name == "new" or action_name == "create"%>
+                <li><%=link_to eval("#{controller_name}_path"), data: {disable_with: "Espere..."}, :title => "Regresar a " + t("activerecord.models.#{controller_name.pluralize}") do%>
+                    <%="Regresar a " + t("activerecord.models.#{controller_name.pluralize}")%>
+                  <%end%></li> 
+              <%elsif action_name == "index" and controller_name != "welcome"%>
+                <li><%=link_to eval("new_#{controller_name.singularize}_path"), data: {disable_with: "Espere..."}, :title => "Registar " + t("activerecord.models.#{controller_name.singularize}") do%>
+                    <%="Registar " + t("activerecord.models.#{controller_name.singularize}")%>
+                  <%end%> </li> 
+              <%elsif action_name == "edit" or action_name == "update" or action_name == "show"%>
+                <li><%=link_to eval("#{controller_name}_path"), data: {disable_with: "Espere..."}, :title => "Regresar a " +  t("activerecord.models.#{controller_name.pluralize}") do%>
+                    <%="Regresar a " + t("activerecord.models.#{controller_name.pluralize}")%>
+                  <%end%> </li> 
+                <li><%=link_to eval("new_#{controller_name.singularize}_path"), data: {disable_with: "Espere..."}, :title => "Registrar " + t("activerecord.models.#{controller_name.singularize}") do%>
+                    <%="Registrar " + t("activerecord.models.#{controller_name.singularize}")%>
+                  <%end%> </li> 
+                <li><%=link_to eval("edit_#{controller_name.singularize}_path(@#{controller_name.singularize})"), data: {disable_with: "Espere..."}, :title => "Editar " + t("activerecord.models.#{controller_name.singularize}") do%>
+                    <%="Editar " + t("activerecord.models.#{controller_name.singularize}")%>
+                  <%end%> </li> 
+                <li><%=link_to eval("@#{controller_name.singularize}"), method: :delete, data: {disable_with: "Espere...", confirm: "¿Está seguro de que desea eliminar este registro?" }, :title => "Eliminar " + t("activerecord.models.#{controller_name.singularize}") do%>
+                    <%="Eliminar " + t("activerecord.models.#{controller_name.singularize}")%>
+                  <%end%></li> 
+              <%end%>
+            </ul>
+          </div>
+
+        </div>  
+        <div class="col-md-9">
+          <% if show_flash? %>
+            <div alert-dismissable">
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true" style="margin:4px;">&times;</button>
+                   <%= flash_msg %>
+            </div> 
+          <% end %>     
+
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3><%= t("activerecord.models.#{controller_name.pluralize}") %></h3></div>
+            <div class="panel-body">
+              <%= yield %> 
+            </div>
+          </div>
+
+          <%= render 'partials/action_links' if show_action_links? %>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- script references -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
